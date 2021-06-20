@@ -3,6 +3,9 @@ build-web:
 
 build-nodejs:
 	CC=emcc wasm-pack build --release --target nodejs
+	
+build-worker:
+	CC=emcc wasm-pack build --release
 
 test-node:
 	make build-nodejs && pushd ./examples/node-test && yarn test ; popd
